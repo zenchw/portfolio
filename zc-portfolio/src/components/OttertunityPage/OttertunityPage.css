@@ -1,0 +1,26 @@
+.App {
+    text-align: center;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: auto;
+}
+
+.App::-webkit-scrollbar {
+    display: none !important;
+}
+
+.CenteredImage {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.DownloadLink {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 7%;
+}
+
+.DownloadImage {
+    width: 10vw;
+}  
