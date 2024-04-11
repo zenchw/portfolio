@@ -17,19 +17,22 @@ function OttertunityPage() {
 
   return (
     <div className="App" style={{
-      height: "200vh",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "100vh",
       width: "100vw",
       margin: "0",
       padding: "0",
       position: "relative",
+      overflow: "hidden",
       backgroundImage: `url("/ottertunity/grass.png")`,
       backgroundSize: "contain",
       backgroundRepeat: "repeat",
-      backgroundPosition: "center",
-      overflow: "hidden",
+      backgroundPosition: "center"
     }}
-    // Place Flowers on click
-      onClick={handleBackgroundClick}
+    onClick={handleBackgroundClick}
     >
     
     {flowers.map((flower, index) => (
@@ -46,12 +49,10 @@ function OttertunityPage() {
         }}
       />
     ))}
-      {/* Top container */}
+
       <div style={{
-        textAlign: "center",
-        height: "100vh",
-        width: "100vw",
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         position: "relative",
@@ -59,33 +60,68 @@ function OttertunityPage() {
         msOverflowStyle: "none",
         scrollbarWidth: "none",
       }}>
-        <img src="/ottertunity/otters.gif" alt="otters-swimming" style={{ maxWidth: '70%', maxHeight: '70%'}} onClick={handleImageClick} />
+        
+        {/* Logo */}
+        <img src="/ottertunity/logo-default.png" alt="Logo"
+        style={{
+          width: "55%",
+          paddingTop:"3%",
+        }} />
+
+        {/* Otters GIF */}
+        <img src="/ottertunity/otters.gif" alt="otters-swimming"
+        style={{
+          maxWidth: "66%",
+          maxHeight: "66%",
+          width: "auto",
+          height: "auto",
+        }} />
+
+        <div style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-around",
+            alignItems: "center",
+            flexWrap: "wrap",
+            padding: "5%",
+          }}>
+          {/* Mockup Image */}
+          <img src="/ottertunity/ottertunity-mockup.png" alt="Mockup" style={{ width: "35%", height: "auto", paddingLeft: "5%", paddingBottom: "5%" }} />
+
+          {/* YouTube Video Embed */}
+          <div style={{
+            width: "45%",
+            position: "relative",
+            paddingBottom: "25.25%",
+            height: 0
+          }}>
+            <iframe
+              src="https://www.youtube.com/embed/kUelAG3v-dM"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%"
+              }}
+            ></iframe>
+          </div>
+        </div>
+
+        {/* Link to HCD Portfolio */}
         <a href="/ottertunity/DRP HCD Portfolio.pdf" target="_blank" rel="noopener noreferrer" style={{
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           right: 0,
-          margin: '7vh',
+          marginTop: '3%',
+          marginRight: '5%',
         }} onClick={handleImageClick}>
-          <img src="/ottertunity/file.png" alt="Open PDF" style={{ width: '8vw' }} onClick={handleImageClick} />
+          <img src="/ottertunity/file.png" alt="Open PDF" style={{ width: '10vw' }} onClick={handleImageClick} />
         </a>
-      </div>
-      
-      {/* Bottom container */}
-      <div style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-around",
-        paddingLeft: "7%",
-        paddingRight: "7%",
-      }}>
-        <div style={{ width: "65%" }}>
-          <img src="/ottertunity/ottertunity-logo.png" alt="Logo" style={{ width: "100%" }} />
-        </div>
-          <div style={{ width: "35%" }}>
-            <img src="/ottertunity/ottertunity-mockup.png" alt="Mockup" style={{ width: "100%" }} onClick={handleImageClick} />
-          </div>
       </div>
     </div>
   );
