@@ -22,7 +22,7 @@ const SocialMediaIcon = ({ icon, iconClick, url }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
-      style={{ cursor: 'pointer', width: '30%', height: '30%' }}
+      style={{ cursor: 'pointer', width: '8%', height: '8%' }}
     />
   );
 }

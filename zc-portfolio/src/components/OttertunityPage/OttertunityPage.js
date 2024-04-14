@@ -11,10 +11,6 @@ function OttertunityPage() {
     setFlowers(prevFlowers => [...prevFlowers, { x, y }]);
   };
 
-  const handleImageClick = (event) => {
-    event.stopPropagation();
-  };
-
   return (
     <div className="App" style={{
       display: "flex",
@@ -30,7 +26,8 @@ function OttertunityPage() {
       backgroundImage: `url("/ottertunity/grass.png")`,
       backgroundSize: "contain",
       backgroundRepeat: "repeat",
-      backgroundPosition: "center"
+      backgroundPosition: "center",
+      cursor: `url("/ottertunity/flower.png"), auto`
     }}
     onClick={handleBackgroundClick}
     >
@@ -63,10 +60,7 @@ function OttertunityPage() {
         
         {/* Logo */}
         <img src="/ottertunity/logo-default.png" alt="Logo"
-        style={{
-          width: "55%",
-          paddingTop:"3%",
-        }} />
+        style={{ width: "55%", paddingTop:"3%", }} />
 
         {/* Otters GIF */}
         <img src="/ottertunity/otters.gif" alt="otters-swimming"
@@ -85,42 +79,28 @@ function OttertunityPage() {
             flexWrap: "wrap",
             padding: "5%",
           }}>
+
           {/* Mockup Image */}
-          <img src="/ottertunity/ottertunity-mockup.png" alt="Mockup" style={{ width: "35%", height: "auto", paddingLeft: "5%", paddingBottom: "5%" }} />
+          <img src="/ottertunity/ottertunity-mockup.png" alt="Mockup"
+          style={{ width: "35%", height: "auto", paddingLeft: "5%", paddingBottom: "5%" }} />
 
           {/* YouTube Video Embed */}
-          <div style={{
-            width: "45%",
-            position: "relative",
-            paddingBottom: "25.25%",
-            height: 0
-          }}>
+          <div style={{ width: "45%", position: "relative", paddingBottom: "25.25%", height: 0 }}>
             <iframe
               src="https://www.youtube.com/embed/kUelAG3v-dM"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%"
-              }}
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
             ></iframe>
           </div>
         </div>
 
         {/* Link to HCD Portfolio */}
-        <a href="/ottertunity/DRP HCD Portfolio.pdf" target="_blank" rel="noopener noreferrer" style={{
-          position: "absolute",
-          top: 0,
-          right: 0,
-          marginTop: '3%',
-          marginRight: '5%',
-        }} onClick={handleImageClick}>
-          <img src="/ottertunity/file.png" alt="Open PDF" style={{ width: '10vw' }} onClick={handleImageClick} />
+        <a href="/ottertunity/DRP HCD Portfolio.pdf" target="_blank" rel="noopener noreferrer"
+        style={{ position: "absolute", top: 0, right: 0, marginTop: '3%', marginRight: '8%', }}>
+          <img src="/ottertunity/file.png" alt="Open PDF" style={{ width: '9vw' }} />
         </a>
       </div>
     </div>
